@@ -1,0 +1,54 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+ 
+using namespace std;
+
+int main()
+{
+    int n=0,m=0,l=0;
+    int a[10009],b[10009],c[10009];
+    cin>>n;
+    for(int i=0;i<n;++i)
+    {
+        cin>>a[i]>>b[i];
+        if(a[i]>=b[i]) c[m++]=a[i];
+        l+=b[i];
+    }
+    int 0;
+    for(int i=0;i<n;++i)
+    {
+        if(a[i]>=l)
+        {
+            k=1;
+            break;
+        }
+    }
+    if(k==0)
+    {
+        int mx=a[1]/(b[1]*b[1]+a[1]*a[1]);
+        int mxi=1,mxj=1;
+        for(int i=0;i<n;++i)
+        {
+            for(int j=0;j<n;++j)
+            {
+                if(a[i]/(b[j]*b[j]+a[i]*a[i]))
+                {
+                    mx=a[i]/(b[j]*b[j]+a[i]*a[i]);
+                    mxi=i;
+                    mxj=j;
+                }
+            }
+        }
+        cout<<"True  -->  max="<<mx<<"  i="<<mxi<<"  j="<<mxj<<endl;
+    }
+    for(int i=0;i<m;++i)
+    cout<<c[i]<<endl;
+    return 0;
+}
