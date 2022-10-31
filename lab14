@@ -1,0 +1,61 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include <string>
+#include <random>
+
+using namespace std;
+
+int main()
+{
+    int k=0;
+    while(k!=1 && k!=2)
+    {
+        cout<<"Encrypt(1) or Decrypt(2)? type 1 or 2: ";
+        cin>>k;
+    }
+    string s;
+    cout<<"Enter message: \n";
+    cin>>s;
+    int gamma;
+    
+    
+    if(k==1)
+    {
+        std::random_device dev;
+        std::mt19937 rng(dev());
+        std::uniform_int_distribution<std::mt19937::result_type> dist6(127,255); // distribution in range [1, 6]
+        
+        gamma= dist6(rng);
+        std::cout <<"Gamma = " << gamma << std::endl;
+        for(int i=0;i<s.length();++i)
+        {
+            int l=int(s[i])^gamma;
+            cout<<int(s[i])<<"  "<<gamma<<"  xor= "<<l<<endl;
+            s[i]=char(l);
+        }
+        cout<<"Encrypted message : "<<s<<endl;
+    }
+    else
+    {
+        cout<<s<<endl;
+        int ss[3]={138,137,136};
+        cout<<"Enter gamma: \n";
+        cin>>gamma;
+        for(int i=0;i<s.length();++i)
+        {
+            int l=int(ss[i])^gamma;
+            cout<<int(ss[i])<<"  "<<gamma<<"  xor= "<<l<<endl;
+            s[i]=char(l);
+        }
+        cout<<"Decrypted message : "<<s<<endl;
+    }
+    
+    return 0;
+}
