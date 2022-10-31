@@ -1,0 +1,38 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    string name[10009],surname[10009],fname[10009],sx[10009];
+    int height[10009];
+    int n=0,l=0;
+    cin>>n;
+    cout<<"Name     Surname     Fathername      Sex     Height\n";
+    for(int i=0;i<n;++i)
+    {
+        cin>>name[i]>>surname[i]>>fname[i]>>sx[i]>>height[i];
+        l+=height[i];
+    }
+    l/=n;
+    cout<<endl<<"Average height : "<<l<<endl<<endl;
+    for(int i=0;i<n;++i)
+    {
+        
+        if(height[i]>l)
+        {
+            cout<<name[i]<<" "<<surname[i]<<" "<<fname[i]<<" "<<sx[i]<<" "<<height[i]<<endl;
+        }
+    }
+    
+    return 0;
+}
