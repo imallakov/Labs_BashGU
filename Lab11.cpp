@@ -37,18 +37,6 @@ int main()
 {
 	int n;
 	cin >> n;
-
-	int* x = new int[3*n];
-	int* y = new int[3*n];
-
-	int* tx1 = new int[n];
-	int* tx2 = new int[n];
-	int* tx3 = new int[n];
-	int* ty1 = new int[n];
-	int* ty2 = new int[n];
-	int* ty3 = new int[n];
-
-	bool* b = new bool[3*n];
 	
 	for (int i = 0; i < 3*n; ++i)
 	{
@@ -60,53 +48,10 @@ int main()
 	for (int i = 0; i < 3 * n; ++i)
 	{
 		cout << "( " << x[i] << " , " << y[i] << " )\n";
+		if((i+1)%3==0) cout<<endl;
 	}
 	cout << endl;
 
-	for (int i = 0; i < n; ++i)
-	{
-		int k = 0, j = 0;
-		while(k<4)
-		{
-			cout << 1 << endl;
-			if (!b[j])
-			{
-				if (k < 3)
-				{
-					if (k == 1)
-					{
-						tx1[i] = x[j];
-						ty1[i] = y[j];
-					}
-					else
-					{
-						tx2[i] = x[j];
-						ty2[i] = y[j];
-					}
-					++k;
-					b[j] = true;
-				}
-				else
-				{
-					if ((x[j] != tx1[i] || x[j] != tx2[i]) && (y[j] != ty1[i] || y[j] != ty2[i]))
-					{
-						tx3[i] = x[j];
-						ty3[i] = y[j];
-						++k;
-						b[j] = true;
-					}
-				}
-			}
-			++j;
-			if (j == 3 * n) break;
-		}
-	}
-
-	for (int i = 0; i < n; ++i)
-	{
-		cout << "( " << tx1[i] << " , " << ty1[i] << " ) ; "<< "( " << tx2[i] << " , " << ty2[i] << " ) ; " << "( " << tx3[i] << " , " << ty3[i] << " )\n";
-	}
-	delete x, y, tx1, tx2, tx3, ty1, ty2, ty3, b;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
