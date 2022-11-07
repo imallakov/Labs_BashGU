@@ -1,1 +1,1 @@
-# Lab11
+# Solutions of laboratory problems(BashGU)
