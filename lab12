@@ -6,6 +6,11 @@ Write your code in this editor and press "Run" button to compile and execute it.
 
 *******************************************************************************/
 
+
+/* 
+!!!Solution is correct but you should solve this problem using STRUCT
+*/
+
 #include <iostream>
 #include <string>
 
