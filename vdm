@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int f(int x[], int l, int r)
+{
+	if (l == r)
+	{
+		return x[l];
+	}
+	int mid = (r - l) / 2 + l;
+	return f(x, l, mid) * f(x, mid + 1, r);
+}
+
+int main()
+{
+
+	int n, x[1009];
+	cin >> n;
+	for (int i = 1; i <= n; ++i)
+		cin >> x[i];
+	cout << f(x, 1, n);
+}
