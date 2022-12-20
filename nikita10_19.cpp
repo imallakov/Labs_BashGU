@@ -19,11 +19,11 @@ int main()
 		int l = 0;
 		for (int j = 1; j <= n; ++j)
 		{
-			if (a[i][j] > 0) ++l;
+			if (a[j][i] > 0) ++l;
 		}
 		if (l == n)
 		{
-			cout << i << endl;
+			cout << j << endl;
 			break;
 		}
 	}
