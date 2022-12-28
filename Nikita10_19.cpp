@@ -14,19 +14,21 @@ int main()
 		}
 	}
 
+	int ans = -1;
 	for (int i = 1; i <= n; ++i)
 	{
-		int l = 0;
-		for (int j = 1; j <= n; ++j)
+		int l = 0, j = 1;
+		while(1)
 		{
-			if (a[j][i] > 0) ++l;
+			if (a[i][j] > 0) ++l;
+			++j;
+			if (j == n + 1) break;
 		}
-		if (l == n)
+		if (l == n && ans == -1)
 		{
-			cout << j << endl;
-			break;
+			ans = i;
 		}
 	}
-
+	cout << ans << endl;
 	return 0;
 }
