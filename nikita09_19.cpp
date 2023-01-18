@@ -11,20 +11,20 @@ int main()
 		for (int j = 1; j <= n; ++j)
 			cin >> a[i][j];
 
-	int i = n, j = 1, ki = -1, kj = -1, c = -1;
-	while (i != n || j != 2)
+	int i = n, j = 1, ki = -1, kj = -1;
+	while (i >= 1 && j <= n)
 	{
+		cout << i << " " << j << endl;
 		if (abs(a[i][j]) < d && ki == -1 && kj == -1)
 		{
 			ki = i;
 			kj = j;
 		}
-		i+=c;
-		if (i == 0)
+		j++;
+		if (j == n + 1)
 		{
-			++j;
-			i = 1;
-			c *= -1;
+			--i;
+			j = 1;
 		}
 	}
 	if (ki == -1)
