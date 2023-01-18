@@ -14,19 +14,22 @@ int main()
 		}
 	}
 
-	int k = 0;
-	for (int i = 1; i <= n; ++i)
+	int k = 0, i = 1, j = 1;
+	while (i <= n)
 	{
-		for (int j = 1; j < n; ++j)
+		j = 1;
+		while (j < n)
 		{
 			if (a[i][j] > a[i][j + 1])
 			{
-				k = i;
+				if (k == 0) k = i;
 				break;
 			}
+			++j;
 		}
-		if (k > 0) break;
+		++i;
 	}
+
 	if (k == 0)
 	{
 		cout << "vse stroki uporyadocheny po vozrostaniyu" << endl;
