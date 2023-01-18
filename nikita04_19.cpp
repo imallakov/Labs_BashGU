@@ -4,21 +4,20 @@
 using namespace std;
 int main()
 {
-	double eps, a = 1, b = 1, c, sum, x, i = 2;
-	cout << "enter x and eps: ";
-	cin >> x >> eps;
-	sum = x * x;
-	c = -1;
-	while (1)
+	double sum = 0, x = 0;
+	cin >> x;
+	for (int i = 1; i <= 8; ++i)
 	{
-		a *= 2 * i - 3;
-		b *= 2 * i + 2;
-		sum += c * (a / b) * 1.0 * pow(x, i + 1);
-		//cout << i << " --> " << c << "*(" << a << "/" << b << ")*" << x << "^" << i + 1 << endl;
-		if (1.0 * (a / b) < eps) break;
-		c *= -1;
-		++i;
+		double znam = 1, chis = 1;
+		double prod = 1;
+		for (int j = 1; j <= 2 * i - 1; ++j)
+		{
+			prod *= x;
+		}
+		double k = (chis * prod) / znam;
+		if (i % 2 == 0) k *= -1;
+		sum += k;
 	}
-	cout << sum << endl;
+	cout << sum;
 	return 0;
 }
