@@ -14,7 +14,6 @@ int main()
 	int i = n, j = 1, ki = -1, kj = -1;
 	while (i >= 1 && j <= n)
 	{
-		cout << i << " " << j << endl;
 		if (abs(a[i][j]) < d && ki == -1 && kj == -1)
 		{
 			ki = i;
